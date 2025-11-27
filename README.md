@@ -77,3 +77,7 @@ agrivision_resnet_best.keras
 
 Class List:
 Stored in class_names.json.
+
+Streamlit Deployed model link: 
+
+https://vegetablefruitclassifierresnet50.streamlit.app/
