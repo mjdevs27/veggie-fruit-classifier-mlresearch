@@ -1,0 +1,52 @@
+# -------------------------
+# PYTHON / VENV
+# -------------------------
+venv/
+env/
+.venv/
+*.env
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# -------------------------
+# NOTEBOOKS / CACHE
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+**/.ipynb_checkpoints/*
+
+# -------------------------
+# OS / EDITOR TRASH
+# -------------------------
+.DS_Store
+Thumbs.db
+*.log
+*.sqlite3
+
+# -------------------------
+# STREAMLIT FILES
+# -------------------------
+.streamlit/
+secrets.toml
+
+# -------------------------
+# IDE / EDITOR SETTINGS
+# -------------------------
+.vscode/
+.idea/
+*.iml
+
+# -------------------------
+# BUILD / DIST FILES
+# -------------------------
+dist/
+build/
+*.egg-info/
+
+# -------------------------
+# TEMP FILES
+# -------------------------
+*.tmp
+*.temp
