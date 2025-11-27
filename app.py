@@ -8,6 +8,11 @@ from tensorflow.keras.applications.resnet50 import preprocess_input
 from PIL import Image, UnidentifiedImageError
 
 # -------------------
+# STREAMLIT CONFIG  (must be the first Streamlit command)
+# -------------------
+st.set_page_config(page_title="AgriVision Classifier", page_icon="🍎")
+
+# -------------------
 # CONFIG
 # -------------------
 IMG_SIZE = (224, 224)
@@ -65,8 +70,6 @@ def predict_image(image: Image.Image):
 # -------------------
 # STREAMLIT UI
 # -------------------
-st.set_page_config(page_title="AgriVision Classifier", page_icon="🍎")
-
 st.title(" AgriVision – Fruit & Vegetable Classifier")
 st.write("Upload a fruit/vegetable image to get the predicted class and confidence score.")
 
@@ -82,7 +85,7 @@ if uploaded is not None:
         st.error("The uploaded file is not a valid image. Please upload a JPG or PNG.")
         st.stop()
 
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     if st.button("Predict"):
         try:
@@ -92,7 +95,6 @@ if uploaded is not None:
             st.success(f"Predicted Class: **{label}**")
             st.write(f"Confidence: **{conf:.2f}%**")
 
-            # Optional: show top-3
             st.subheader("Top 3 probabilities")
             top_k = min(3, len(preds))
             top_idx = np.argsort(preds)[::-1][:top_k]
