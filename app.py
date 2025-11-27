@@ -85,7 +85,8 @@ if uploaded is not None:
         st.error("The uploaded file is not a valid image. Please upload a JPG or PNG.")
         st.stop()
 
-    st.image(image, caption="Uploaded Image", use_container_width=True)
+    # IMPORTANT: use_column_width works on Streamlit 1.37.0 (Cloud)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
 
     if st.button("Predict"):
         try:
